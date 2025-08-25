@@ -1,0 +1,16 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  db_azes:
+    image: postgres
+    restart: always
+    environment:
+        - POSTGRES_PASSWORD=12345
+        - POSTGRES_USER=vadim
+        - POSTGRES_DB=AZES
+    ports:
+        - 5432:5432
+  adminer_azes:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
